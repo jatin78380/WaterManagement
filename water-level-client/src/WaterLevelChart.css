@@ -1,0 +1,21 @@
+.water-wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Match the canvas height */
+    background-color: blue;
+    animation: wave 10s linear infinite;
+  }
+  
+  @keyframes wave {
+    10% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+
+

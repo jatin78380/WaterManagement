@@ -1,0 +1,300 @@
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 5px;
+  display: block;
+}
+
+input[type="text"], input[type="password"] {
+  padding: 10px ;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+
+
+.App {
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  min-width: 68rem; 
+  margin: 0 auto;
+  padding: 1.25rem; 
+  align-items: center;
+}
+
+.logo {
+  width: 12.25rem; 
+  height: 3.75rem; 
+}
+
+.hero-img-container {
+  border-radius: 20px;
+  border-style: hidden;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 10rem;
+  padding-left: 120px; 
+  padding-right: 120px; 
+  margin: 0 auto;
+  background: linear-gradient(0deg, rgba(5,92,117,1) 0%, rgba(146,237,255,0.5) 20%, rgba(255,255,255,0) 30%);
+}
+
+.left-column{
+  text-align: left;
+  align-content: left;
+  padding-left: 0rem;
+}
+
+.right-column {
+  text-align: left;
+  align-content: left;
+  padding-left: 2rem;
+}
+
+button {
+  padding: 0.7rem 1.25rem; 
+  background: linear-gradient(90deg, #004AAD, #1EF3AD);
+  color: white;
+  border: none;
+  border-radius: 0.3125rem; 
+  cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: 900; 
+  line-height: 1.25rem; 
+}
+
+button:hover {
+  background: linear-gradient(-30deg, #000000, #111827);
+}
+
+h1 {
+  font-size: 3.25rem; 
+  line-height: 3.375rem; 
+}
+
+h2 {
+  font-size: 2.25rem; 
+  line-height: 2.5rem;
+  color: white; 
+}
+
+.h2dark{
+  font-size: 2.25rem; 
+  line-height: 2.5rem;
+  color: black;
+}
+
+h3 {
+  font-size: 2.05rem; 
+  line-height: 2.25rem;
+}
+
+p {
+  font-size: 1.1875rem; 
+  line-height: 1.6875rem; 
+}
+
+.pwhite{
+  font-size: 1.1875rem; 
+  line-height: 1.6875rem; 
+  color: white;
+}
+
+/* FeaturesSection */
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  padding-left: 120px; 
+  padding-right: 120px;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  margin: 0 auto;
+  background: rgba(5,92,117,1);
+}
+
+.features-wrapper{
+  width: auto;
+  display: flex;
+  justify-content:space-between;
+  padding-top: 2rem;
+}
+
+.feature {
+  flex-basis: calc(20% - 20px);
+  text-align: center;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #007bff;
+  background: linear-gradient(70deg, #004AAD, #1EF3AD);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.icon{
+  width: 50px;
+  height: 50px;
+}
+
+.sponsor{
+  margin-top: 3rem;
+  width: 360px;
+  height: 128px;
+  border-radius: 20px;
+}
+
+.team{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-between;
+  padding-left: 120px; 
+  padding-right: 120px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin: 0 auto;
+  background: rgb(255, 255, 255);
+}
+
+.team-wrapper{
+  width: auto;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.pfp {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.footer{
+  display: flex;
+  justify-content:center;
+  margin: 0 auto;
+  padding: 1.25rem; 
+  align-items: center;
+  background-color: #000000;
+}
+
+
+/* CSS for DashboardPage component */
+.dashboard-page {
+  display: flex;
+}
+
+.leftmenu-column {
+  width: 20%;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.rightdashboard-column {
+  width: 80%;
+  padding: 20px;
+}
+
+/* Styles for buttons */
+.left-column-button {
+  padding: 0.7rem 1.25rem; 
+  background: #f0f0f0;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: 900; 
+  line-height: 1.25rem; 
+  width: 100%;
+}
+.left-column-button:hover {
+  background: grey;
+}
+
+/* Styles for rounded rectangle and big white square */
+
+.tank-container {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  margin-bottom: 20px;
+  align-content: flex;
+  align-items: flex;
+  text-align: left;
+}
+
+.blue-text {
+  color: rgba(5,92,117,1);
+}
+
+.big-white-square {
+  width: 90%;
+  height: 600px;
+  background-color: white;
+  border: 1px solid #ccc;
+}
+
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.dashboard-page {
+  display: flex;
+  flex-direction: column;
+}
+.wrapper{
+  display: flex;
+  flex-direction: row;
+
+}
