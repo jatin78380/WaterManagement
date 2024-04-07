@@ -78,6 +78,11 @@ Water Reservoir Management System designed to monitor and control water levels i
 Check file "VATank-Circuit-Diagram.pdf"
 
 ## Reservoir Base
+### Simulation
+Check TinKerKad Simulation here: https://www.tinkercad.com/things/3jS6k3861r8-powerful-wolt-krunk/editel?sharecode=E860uOz6-trSfUnOk5dSWzfpXMBiEw4g3Mir018WncQ
+
+![TinkerKad Simulation](https://i.ibb.co/7J291B2/VATank-Reservoir-Simulation.png)
+
 ### Pin Configuration - Arduino MEGA
 - trigPin1, echoPin1, trigPin2, echoPin2: Pins for ultrasonic sensors.
 - valve1Pin, valve2Pin: Control pins for the solenoid valves.
