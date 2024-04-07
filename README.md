@@ -7,6 +7,14 @@ In Valencia, Venezuela, an urban area faces a critical challenge with its water 
 The communication network connecting these tanks is vulnerable to disruptions, particularly during the rainy season, when fallen trees frequently damage the aerial cables.
 Project made thanks to Bay Area Hacks 2.0 Hackathon.
 
+**Presentation Video**
+
+[![Watch the Presentation Video](https://img.youtube.com/vi/-2YzhFM6M3Y/0.jpg)](https://www.youtube.com/watch?v=-2YzhFM6M3Y)
+
+**Thanks Video**
+
+[![Watch the Thanks Video](https://img.youtube.com/vi/4uZNPTcUxIM/0.jpg)](https://www.youtube.com/watch?v=4uZNPTcUxIM)
+
 ## Key Features
 **Real-time visualization of individual tank water level:** This is critical for administrators to monitor the water availability in each tank and make informed decisions about water distribution.
 
