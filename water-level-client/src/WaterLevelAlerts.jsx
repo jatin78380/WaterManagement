@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:3000'); // Replace with your server URL
+const socket = io('http://localhost:3000'); 
 
 const WaterLevelAlerts = () => {
   const [waterLevel, setWaterLevel] = useState(10);
@@ -11,10 +11,10 @@ const WaterLevelAlerts = () => {
   useEffect(() => {
     socket.on('waterLevelData', (data) => {
       setWaterLevel(data.level);
-      setAlertMessage(data.message || ''); // Set empty string if no message
+      setAlertMessage(data.message || ''); 
     });
 
-    return () => socket.disconnect(); // Cleanup on unmount
+    return () => socket.disconnect(); 
   }, []);
 
   const triggerManualAlert = () => {
@@ -50,13 +50,4 @@ const WaterLevelAlerts = () => {
 
 export default WaterLevelAlerts;
 
-// Add bounce animation (optional)
-/*
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}*/
+
