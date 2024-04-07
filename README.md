@@ -117,7 +117,6 @@ The system continuously measures the water level in the mountain tank using an u
 
 # RF Communication Documentation
 ![RF Link](https://i.ibb.co/T4NMBnh/Screenshot-300.png)
-Check "RF Communication" Folder. These files should be opened with Radio Mobile Open Source Software.
 
 This section outlines the specifications of the RF communication link used in the water level monitoring system between a mountain tank and a reservoir. The system operates within the 2.4 GHz ISM band, utilizing the NRF24L01 module for transmission and reception, and employs the Enhanced ShockBurst protocol for data communication.
 
