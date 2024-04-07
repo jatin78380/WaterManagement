@@ -4,16 +4,19 @@ import Chart from 'chart.js/auto';
 const WaterLevelChart = ({ tankId }) => {
   const [waterLevels, setWaterLevels] = useState({});
   const [latestWaterLevel, setLatestWaterLevel] = useState(null);
+
   const ctx23 = React.createRef();
   const ctxFullDay = React.createRef();
 
-  useEffect(() => {
-    const generateRandomWaterLevels = () => {
-      const randomLevels = Array.from({ length: 24 }, () => Math.floor(Math.random() * 10)); // Generate random water levels
-      setWaterLevels(randomLevels);
-      setLatestWaterLevel(randomLevels[randomLevels.length - 1]);
-    };
+  // Function to generate random water levels for simulation 
+  const generateRandomWaterLevels = () => {
+    const randomLevels = Array.from({ length: 24 }, () => Math.floor(Math.random() * 10)); 
+    setWaterLevels(randomLevels);
+    setLatestWaterLevel(randomLevels[randomLevels.length - 1]);
+  };
 
+  // Effect to update water levels periodically
+  useEffect(() => {
     const updateWaterLevelPeriodically = () => {
       generateRandomWaterLevels();
       setTimeout(() => {
@@ -24,6 +27,7 @@ const WaterLevelChart = ({ tankId }) => {
     updateWaterLevelPeriodically();
   }, []);
 
+  // Effect to create and update chart
   useEffect(() => {
     if (Object.keys(waterLevels).length > 0) {
       const labels = Array.from({ length: 24 }, (_, i) => `${i}:00`);
@@ -61,8 +65,8 @@ const WaterLevelChart = ({ tankId }) => {
             }],
             yAxes: [{
               ticks: {
-                suggestedMin: 0,
-                suggestedMax: 10
+                suggestedMin: 0, // minimum y-axis value
+                suggestedMax: 10 // maximum y-axis value
               }
             }]
           },
@@ -79,8 +83,9 @@ const WaterLevelChart = ({ tankId }) => {
 
       return () => chartFullDay.destroy();
     }
-  }, [waterLevels]);
+  }, [waterLevels, tankId]);
 
+  // Render
   return (
     <div>
       <h2>Tank {tankId} Water Level</h2>
