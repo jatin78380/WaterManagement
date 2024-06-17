@@ -5,15 +5,17 @@ import io from 'socket.io-client';
 const WaterLevelChart2 = ({ tankId }) => {
   const [waterLevels, setWaterLevels] = useState({});
   const [latestWaterLevel, setLatestWaterLevel] = useState(null);
+
   const ctx23 = React.createRef();
   const ctxFullDay = React.createRef();
 
+  // Effect to establish socket connection and handle data updates simulation
   useEffect(() => {
-    const socket = io('your_socket_server_url'); // Replace 'your_socket_server_url' with the actual server URL
+    const socket = io('your_socket_server_url'); 
 
     socket.on('waterLevelUpdate', (data) => {
       setWaterLevels(data);
-      setLatestWaterLevel(data[data.length - 1]); // Assuming the latest data is at the end of the array
+      setLatestWaterLevel(data[data.length - 1]); 
     });
 
     return () => {
@@ -21,22 +23,15 @@ const WaterLevelChart2 = ({ tankId }) => {
     };
   }, []);
 
+  // Function to generate random water levels for simulation
   const generateRandomWaterLevels = () => {
-    const randomLevels = Array.from({ length: 24 }, () => Math.floor(Math.random() * 20)); // Generate random water levels
+    const randomLevels = Array.from({ length: 24 }, () => Math.floor(Math.random() * 20)); 
     setWaterLevels(randomLevels);
     setLatestWaterLevel(randomLevels[randomLevels.length - 1]);
   };
 
-  const createGradientFill = (level) => {
-    const ctx = document.createElement('canvas').getContext('2d');
-    const gradient = ctx.createLinearGradient(0, 0, 0, 100);
-    gradient.addColorStop(0, `rgba(0, 171, 255, ${(level / 20) * 0.8})`);
-    gradient.addColorStop(1, 'rgba(0, 171, 255, 0.2)');
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, 1, 100);
-    return ctx.canvas.toDataURL();
-  };
-
+  
+  // Effect to create and update chart
   useEffect(() => {
     if (Object.keys(waterLevels).length > 0) {
       const labels = Array.from({ length: 24 }, (_, i) => `${i}:00`);
@@ -74,8 +69,8 @@ const WaterLevelChart2 = ({ tankId }) => {
             }],
             yAxes: [{
               ticks: {
-                min: 0, // Set the minimum y-axis value
-                max: 10, // Set the maximum y-axis value
+                min: 0, // minimum y-axis value
+                max: 10 // maximum y-axis value
               }
             }]
           },
@@ -95,8 +90,9 @@ const WaterLevelChart2 = ({ tankId }) => {
 
       return () => chartFullDay.destroy();
     }
-  }, [waterLevels]);
+  }, [waterLevels, tankId]);
 
+  // Render
   return (
     <div>
       <h2>Tank {tankId} Water Level</h2>

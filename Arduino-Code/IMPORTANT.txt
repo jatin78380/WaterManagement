@@ -1,0 +1,10 @@
+It's really important to include this libraries into the Arduinos:
+- #include <SPI.h>
+- #include <nRF24L01.h>
+- #include <RF24.h>
+
+For Reservoir Base, use Arduino MEGA.
+
+For Mountain Base, use Arduino UNO.
+
+Check Main folder for electronics connection diagram.

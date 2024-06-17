@@ -6,14 +6,14 @@ function WaterManagement() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const navigate = useNavigate(); // Hook for navigation
+  
+  const navigate = useNavigate();
 
+  // Function to handle form submission
   const handleSubmit = async (event) => {
-    event.preventDefault(); // Prevent default form submission behavior
+    event.preventDefault(); 
 
-    // Implement form validation here (optional)
-
-    // Example: Check if email and password are not empty
+    // Check if email and password are not empty
     if (!email || !password) {
       setErrorMessage('Please enter your email and password.');
       return;
@@ -33,10 +33,11 @@ function WaterManagement() {
     }
   };
 
+  // Render
   return (
     <div>
       <form onSubmit={handleSubmit} className='login-form'>
-        <h1>Admin Login</h1>
+        <h1>Login</h1>
 
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         <div className='form-group'>
