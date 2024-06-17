@@ -9,7 +9,7 @@
   }
   
   @keyframes wave {
-    10% {
+    20% {
       transform: translateX(0);
     }
     100% {
