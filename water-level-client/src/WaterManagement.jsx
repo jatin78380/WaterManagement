@@ -20,7 +20,7 @@ function WaterManagement() {
     }
 
     try {
-      const response = await axios.post('http://localhost:3000/login', { email, password });
+      const response = await axios.post('http://localhost:3000/signup', { email, password });
 
       if (response.status === 200) {
         console.log('Login successful!');
@@ -29,8 +29,7 @@ function WaterManagement() {
         setErrorMessage(response.data.message || 'Login failed.');
       }
     } catch (error) {
-      console.error('Error logging in:', error);
-      setErrorMessage('An error occurred. Please try again later.');
+     console.log(error)
     }
   };
 

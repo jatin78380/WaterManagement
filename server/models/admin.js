@@ -1,8 +1,10 @@
 const  mongoose = require ('mongoose');
-const UserSchema = new mongoose.Schema({
-email: {type: String, required: true,unique:true},
-password: {type: String, required: true},
+mongoose.connect('mongodb+srv://jatin8612:Jatin%40rkblbrrk!12@cluster0.nkvwqm9.mongodb.net/')
+const AdminSchema = new mongoose.Schema({
+email: String,
+password: String,
 })
 
-const UserModel = mongoose.model('users', UserSchema);
-export {UserModel as User};
+const AdminModel = mongoose.model('admin', AdminSchema);
+
+  module.exports = {AdminModel}
