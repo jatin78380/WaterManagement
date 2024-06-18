@@ -1,16 +1,18 @@
 const { Router } = require('express');
 const router = Router();
 const adminMiddleware = require('../middlewares/admin');
-const {Admin} = require("../models/admin");
+const {AdminModel} = require("../models/AdminModel");
+
 router.post('/signup',(req,res)=>{
-    const username = req.body.username;
+    const email = req.body.email;
     const password = req.body.password; 
-    Admin.create({
-        username,
+    AdminModel.create({
+        email,
         password
     })
     res.json({
-        msg: "Admin created successfully"
+        message: "Admin created successfully"
     })
+   
 })
 module.exports = router;

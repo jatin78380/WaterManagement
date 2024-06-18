@@ -20,7 +20,7 @@ function WaterManagement() {
     }
 
     try {
-      const response = await axios.post('http://localhost:3000/signup', { email, password });
+      const response = await axios.post('http://localhost:3000/admin/signup', { email, password });
 
       if (response.status === 200) {
         console.log('Login successful!');
