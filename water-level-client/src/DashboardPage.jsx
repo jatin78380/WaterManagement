@@ -28,6 +28,32 @@ const DashboardPage = () => {
         navigate('/admin');
     };
 
+
+
+
+    const handleSubmit = async (event) => {
+        event.preventDefault(); 
+    
+        // Check if email and password are not empty
+        if (!email || !password) {
+          setErrorMessage('Please enter your email and password.');
+          return;
+        }
+    
+        try {
+          const response = await axios.post('http://localhost:3000/admin/configuration', {tankname,tankCapacity,location,threshold});
+    
+          if (response.status === 200) {
+            console.log('Login successful!');
+            navigate('/dashboard'); // Navigate to dashboard upon successful login
+          } else {
+            setErrorMessage(response.data.message || 'Login failed.');
+          }
+        } catch (error) {
+         console.log(error)
+        }
+      };
+
     return (
         <div className="dashboard-page">
             <div className="nav">
@@ -107,6 +133,8 @@ const DashboardPage = () => {
                                     <div className="tank-configuration">
                                       <h2>Tank Configuration</h2>
                                       <div className="configuration-options">
+                                      <form onSubmit={handleSubmit} className='login-form'>
+
                                           <label htmlFor="tankName">Tank Name:</label>
                                           <input type="text" id="tankName" name="tankName" placeholder="Enter tank name" />
 
@@ -118,8 +146,11 @@ const DashboardPage = () => {
 
                                           <label htmlFor="threshold">Threshold:</label>
                                           <input type="number" id="threshold" name="threshold" placeholder="Enter threshold value" />
+                                          </form>
+                                          <button className="save-btn">Save Configuration</button>
                                       </div>
-                                      <button className="save-btn">Save Configuration</button>
+                                      
+                                     
                                   </div>
                                 </div>
                             </div>
