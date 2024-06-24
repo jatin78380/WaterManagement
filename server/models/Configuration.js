@@ -1,5 +1,5 @@
 const  mongoose = require ('mongoose');
-mongoose.connect('mongodburlofmine')
+mongoose.connect('mongorulofmine')
 const ConfigurationSchema= new mongoose.Schema({
 tankname: String,
 tankcapacity: Number,

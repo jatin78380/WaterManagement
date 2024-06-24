@@ -1,8 +1,8 @@
 const  mongoose = require ('mongoose');
-mongoose.connect('mongodburlofmine')
+mongoose.connect('mongodburl')
 const AdminSchema = new mongoose.Schema({
 email: String,
-password: String,
+password: Number,
 })
 
 const AdminModel = mongoose.model('admin', AdminSchema);

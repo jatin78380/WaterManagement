@@ -33,21 +33,22 @@ const DashboardPage = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault(); 
-    
-        // Check if email and password are not empty
-        if (!email || !password) {
-          setErrorMessage('Please enter your email and password.');
-          return;
-        }
+      
+       
     
         try {
           const response = await axios.post('http://localhost:3000/admin/configuration', {tankname,tankCapacity,location,threshold});
     
           if (response.status === 200) {
-            console.log('Login successful!');
-            navigate('/dashboard'); // Navigate to dashboard upon successful login
-          } else {
-            setErrorMessage(response.data.message || 'Login failed.');
+            console.log('config details added successfully');
+           
+          } else{
+            if (response.status === 400) {
+              console.log('config details already exist');
+            } else {
+              console.log('Error while adding config details');
+            }
+          }
           }
         } catch (error) {
          console.log(error)
