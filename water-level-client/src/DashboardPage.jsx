@@ -36,23 +36,23 @@ const DashboardPage = () => {
       
        
     
-        try {
-          const response = await axios.post('http://localhost:3000/admin/configuration', {tankname,tankCapacity,location,threshold});
+        // try {
+        //   const response = await axios.post('http://localhost:3000/admin/configuration', {tankname,tankCapacity,location,threshold});
     
-          if (response.status === 200) {
-            console.log('config details added successfully');
+        //   if (response.status === 200) {
+        //     console.log('config details added successfully');
            
-          } else{
-            if (response.status === 400) {
-              console.log('config details already exist');
-            } else {
-              console.log('Error while adding config details');
-            }
-          }
-          }
-        } catch (error) {
-         console.log(error)
-        }
+        //   } else{
+        //     if (response.status === 400) {
+        //       console.log('config details already exist');
+        //     } else {
+        //       console.log('Error while adding config details');
+        //     }
+        //   }
+        //   }
+        // } catch (error) {
+        //  console.log(error)
+        // }
       };
 
     return (
