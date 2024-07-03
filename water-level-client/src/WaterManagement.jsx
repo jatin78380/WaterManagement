@@ -35,14 +35,16 @@ function WaterManagement() {
 
   // Render
   return (
-    <div>
-      <form onSubmit={handleSubmit} className='login-form'>
-        <h1>Login</h1>
+    <div className='pt-0.5 mt-6 mx-2.5  border-b border-neutral-900  pb-24'>
+
+      <div  className=''>
+      <form  className= " grid gap-6  box-border md:box-content rounded-2xl w-1/8  lg:w-1/4 p-8 bg-blue-900 my-20 text-center text-4xl" onSubmit={handleSubmit}>
+        <h1 className=''>Login</h1>
 
         {errorMessage && <p className="error-message">{errorMessage}</p>}
-        <div className='form-group'>
-          <label htmlFor="email">Email:</label>
-          <input
+        <div className=' grid-gap-6 '>
+          <label  className=" flex justify-right"htmlFor="email">Email:</label>
+          <input   className='p-0.5 border-2 my-2.5  caret-pink-500 rounded-lg'
             type="email"
             id="email"
             name="email"
@@ -51,9 +53,9 @@ function WaterManagement() {
             required
           />
         </div>
-        <div className='form-group'>
-          <label htmlFor="password">Password:</label>
-          <input
+        <div className='grid gap-6 form-group'>
+          <label className='flex justify-right' htmlFor="password">Password:</label>
+          <input className='p-0.5 my2.5 border-2  caret-pink-500 rounded-lg' 
             type="password"
             id="password"
             name="password"
@@ -62,9 +64,14 @@ function WaterManagement() {
             required
           />
         </div>
-        <button type="submit">Login</button>
+        <button className='rounded-full' type="submit">Login</button>
       </form>
+
+      </div>
+     
+    
     </div>
+    
   );
 }
 

@@ -1,6 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { motion } from "framer-motion"
+const container =(delay)=>( {
+    hidden: { x: -100, opacity: 0 },
+    visible:{
+      x:0,
+      opacity:1,
+      transition: {duration: 0.5, delay:delay}
+    }
+  })
 const HomePage = () => {
     // Using React Router's useNavigate hook to handle navigation
     const navigate = useNavigate();
@@ -11,65 +19,68 @@ const HomePage = () => {
     };
     
     return (
-        <div className='App'> 
+        <div className='App'>   
             {/* Hero section */}
             <section className="hero">
-                <div className="left-column">
-                    <h1>IOT Solution for Water Tank System in VLC</h1>
-                    <p>IoT-powered water management solution, providing real-time data visualization and analytics for Valencia Urbanism.</p>
-                    <button onClick={handleNavigateToAdmin}>Check Demo</button>
+                <div 
+               className="left-column">
+                    <motion.h1 variants={container(0)} initial="hidden" animate="visible">IOT Solution for Water Tank System in VLC</motion.h1>
+                    <motion.p variants={container(0.5)} initial="hidden" animate="visible">IoT-powered water management solution, providing real-time data visualization and analytics for Valencia Urbanism.</motion.p>
+                    <motion.button variants={container(1)} initial="hidden" animate="visible" onClick={handleNavigateToAdmin}>Check Demo</motion.button>
                 </div>
-                <div className="right-column">
+                <motion.div  initial={{x:100,opacity:0}} 
+           animate={{x:0,opacity: 1}} 
+           transition={{duration: 1, delay: 1.5}} className="right-column">
                     <img src="./images/Hero-Image.jpg" alt="Water Tank" className="hero-img-container" />
-                </div>
+                </motion.div>
             </section>
             {/* Features section */}
             <section className="features">
-                <h2>Simple Installation & Scalability</h2>
+                <motion.h2 whileInView={{opacity:1, y:0}} initial={{opacity:0, y: -100}} transition={{duration: 1}}>Simple Installation & Scalability</motion.h2>
                 <div className="features-wrapper">
                     <div className="feature">
-                        <div className="circle">
+                        <motion.div whileInView={{opacity: 1 , y:0}} initial={{opacity:0 ,y:100}}  transition={{duration:1.5}} className="circle">
                             <img src="./images/DashboardIcon.png" alt="Dashboard" className="icon"/>
-                        </div>
-                        <p className="pwhite">One dashboard for management tasks.</p>
+                        </motion.div>
+                         < motion.p whileInView={{opacity: 1 , y:0}} initial={{opacity:0 ,y:-100}}  transition={{duration:1.5}} className="pwhite">One dashboard for management tasks.</motion.p>
                     </div>
                     <div className="feature">
-                        <div className="circle">
+                        <motion.div whileInView={{opacity: 1 , y:0}} initial={{opacity:0 ,y:100}}  transition={{duration:1.5}} className="circle">
                             <img src="./images/WirelessIcon.png" alt="Wireless" className="icon"/>
-                        </div>
-                        <p className="pwhite">Wireless feature with easy installation.</p>
+                        </motion.div>
+                        < motion.p whileInView={{opacity: 1 , y:0}} initial={{opacity:0 ,y:-100}}  transition={{duration:1.5}} className="pwhite">Wireless feature with easy installation.</motion.p>
                     </div>
                     <div className="feature">
-                        <div className="circle">
+                        <motion.div whileInView={{opacity: 1 , y:0}} initial={{opacity:0 ,y:100}}  transition={{duration:1.5}}className="circle">
                             <img src="./images/NotificationIcon.png" alt="Notifications" className="icon"/>
-                        </div>
-                        <p className="pwhite">Customizable alerts and notifications.</p>
+                        </motion.div>
+                        < motion.p whileInView={{opacity: 1 , y:0}} initial={{opacity:0 ,y:-100}}  transition={{duration:1.5}}p className="pwhite">Customizable alerts and notifications.</motion.p>
                     </div>
                 </div>
                 {/* Sponsor section */}
-                <div>
+                <motion.div whileInView={{opacity:1, y:0}} initial={{opacity:0, y: -100}} transition={{duration: 1}}div>
                     <img src="./images/BayAreaHacks.png" alt="BayAreaHAcks" className="sponsor"/>
-                </div>
+                </motion.div>
             </section>
             {/* Team section */}
             <section className="team">
-                <h2 className="h2dark">Team</h2>
+                <motion.h2 whileInView={{opacity:1, y:0}} initial={{opacity:0, y: -100}} transition={{duration: 1}} className="h2dark">Team</motion.h2>
                 <div className="features-wrapper">
                     <div className="team-wrapper">
-                        <img src="./images/JP.jpg" alt="Jatin Parashar" className="pfp"/>
-                        <p>Jatin Parashar</p>
-                        <p><b>Aspiring Full Stack Dev</b></p>
+                        <motion.img whileInView={{opacity:1, y:0}} initial={{opacity:0, y: -100}} transition={{duration: 1}} src="./images/JP.jpg" alt="Jatin Parashar" className="pfp"/>
+                        <motion.p whileInView={{opacity:1, x:0}} initial={{opacity:0, x: -100}} transition={{duration:1}}>Jatin Parashar</motion.p>
+                        <motion.p whileInView={{opacity:1, x:0}} initial={{opacity:0, x: -100}} transition={{duration:1}}p><b>Aspiring Full Stack Dev</b></motion.p>
                     </div>
                     <div className="team-wrapper">
-                        <img src="./images/MS.jpg" alt="Maria Salcedo" className="pfp"/>
-                        <p>María Salcedo</p>
-                        <p><b>Front-end Dev & Designer</b></p>
+                        <motion.img whileInView={{opacity:1, y:0}} initial={{opacity:0, y: -100}} transition={{duration: 1}}img src="./images/MS.jpg" alt="Maria Salcedo" className="pfp"/>
+                        <motion.p whileInView={{opacity:1, x:0}} initial={{opacity:0, x: -100}} transition={{duration:1}}>María Salcedo</motion.p>
+                        <motion.p whileInView={{opacity:1, x:0}} initial={{opacity:0, x: -100}} transition={{duration:1}}><b>Front-end Dev & Designer</b></motion.p>
                     </div>
                 </div>
             </section>
             {/* Footer section */}
             <section className="footer">
-                <p className="pwhite">Project for BayAreaHacks Hackathon 2.0</p>
+                <motion.p whileInView={{opacity:1, y:0}} initial={{opacity:0, y: -100}} transition={{duration: 1}} className="pwhite">Project for BayAreaHacks Hackathon 2.0</motion.p>
             </section>
         </div>
     );
